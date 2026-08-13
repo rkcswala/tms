@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Dashboard.css";
 
-const API = "http://localhost:3000/api";
+const API = "https://full-stack-kappa-lime.vercel.app/api";
 
 const Dashboard = () => {
   const [tasks, setTasks] = useState([]);
