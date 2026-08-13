@@ -1,3 +1,6 @@
+/* =====================================================
+   RESET
+===================================================== */
 
 * {
     margin: 0;
@@ -13,6 +16,7 @@ body {
     font-family: Arial, sans-serif;
     background: #f4f6f9;
     color: #1e293b;
+    overflow-x: hidden;
 }
 
 .home {
@@ -22,18 +26,21 @@ body {
 }
 
 
+/* =====================================================
+   NAVBAR
+===================================================== */
 
 .home-nav {
     width: 100%;
     min-height: 70px;
-
-    background: #1e293b;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     padding: 0 7%;
+
+    background: #1e293b;
 
     position: sticky;
     top: 0;
@@ -43,12 +50,15 @@ body {
 }
 
 
+/* =====================================================
+   LOGO
+===================================================== */
 
 .logo {
-    color: white;
+    color: #ffffff;
 
     font-size: 30px;
-    font-weight: bold;
+    font-weight: 700;
 
     white-space: nowrap;
 }
@@ -58,18 +68,20 @@ body {
 }
 
 
-
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 .nav-links {
     display: flex;
-
     align-items: center;
-
     gap: 30px;
 }
 
 .nav-links a {
-    color: white;
+    display: inline-block;
+
+    color: #ffffff;
 
     text-decoration: none;
 
@@ -78,7 +90,9 @@ body {
 
     padding: 9px 5px;
 
-    transition: all 0.3s ease;
+    transition:
+        color 0.3s ease,
+        background 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -90,8 +104,7 @@ body {
 
 .nav-links a:last-child {
     background: #2563eb;
-
-    color: white;
+    color: #ffffff;
 
     padding: 9px 18px;
 
@@ -100,40 +113,51 @@ body {
 
 .nav-links a:last-child:hover {
     background: #1d4ed8;
-
-    color: white;
+    color: #ffffff;
 }
 
 
+/* =====================================================
+   MOBILE MENU BUTTON
+===================================================== */
 
 .menu-toggle {
     display: none;
 
+    width: 42px;
+    height: 42px;
+
     border: none;
+    border-radius: 6px;
 
     background: transparent;
+    color: #ffffff;
 
-    color: white;
-
-    font-size: 28px;
+    font-size: 27px;
 
     cursor: pointer;
 
-    padding: 5px;
+    align-items: center;
+    justify-content: center;
 
-    line-height: 1;
+    transition: background 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background: #334155;
 }
 
 
+/* =====================================================
+   HERO
+===================================================== */
+
 .hero {
     width: 100%;
-
     min-height: 450px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     gap: 50px;
@@ -148,30 +172,32 @@ body {
 }
 
 
-/* Hero content */
+/* =====================================================
+   HERO CONTENT
+===================================================== */
 
 .hero-content {
+    width: 100%;
     max-width: 650px;
 }
 
 .welcome {
+    margin-bottom: 12px;
+
     color: #2563eb;
 
     font-size: 16px;
-
     font-weight: 600;
-
-    margin-bottom: 12px;
 }
 
 .hero-content h1 {
-    font-size: clamp(35px, 5vw, 58px);
-
-    line-height: 1.1;
+    margin-bottom: 20px;
 
     color: #1e293b;
 
-    margin-bottom: 20px;
+    font-size: clamp(35px, 5vw, 58px);
+
+    line-height: 1.1;
 }
 
 .hero-content h1 span {
@@ -181,34 +207,37 @@ body {
 .hero-text {
     max-width: 550px;
 
+    margin-bottom: 25px;
+
     color: #64748b;
 
     font-size: 18px;
-
     line-height: 1.7;
-
-    margin-bottom: 25px;
 }
 
 
-
+/* =====================================================
+   HERO BUTTON
+===================================================== */
 
 .hero-button {
     display: inline-block;
 
-    background: #2563eb;
-
-    color: white;
-
-    text-decoration: none;
-
     padding: 12px 22px;
+
+    background: #2563eb;
+    color: #ffffff;
 
     border-radius: 7px;
 
-    font-size: 15px;
+    text-decoration: none;
 
-    transition: 0.3s;
+    font-size: 15px;
+    font-weight: 500;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
 }
 
 .hero-button:hover {
@@ -218,23 +247,24 @@ body {
 }
 
 
+/* =====================================================
+   HERO CARD
+===================================================== */
 
 .hero-card {
     width: 320px;
 
     flex-shrink: 0;
 
-    background: white;
-
     padding: 35px 25px;
+
+    background: #ffffff;
 
     text-align: center;
 
     border-radius: 15px;
 
-    box-shadow:
-        0 10px 30px
-        rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .circle-icon {
@@ -243,100 +273,104 @@ body {
 
     margin: 0 auto 18px;
 
-    border-radius: 50%;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
 
-    background: #dcfce7;
+    border-radius: 50%;
 
+    background: #dcfce7;
     color: #16a34a;
 
     font-size: 30px;
-
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .hero-card h3 {
-    font-size: 22px;
-
     margin-bottom: 10px;
+
+    font-size: 22px;
 }
 
 .hero-card p {
     color: #64748b;
 
+    font-size: 15px;
     line-height: 1.6;
 }
 
 
-
+/* =====================================================
+   FEATURES
+===================================================== */
 
 .features {
     width: 100%;
 
     padding: 70px 7%;
 
-    text-align: center;
+    background: #ffffff;
 
-    background: white;
+    text-align: center;
 }
 
 .features h2 {
-    font-size: 35px;
-
     margin-bottom: 10px;
+
+    color: #1e293b;
+
+    font-size: 35px;
 }
 
 .features-subtitle {
+    margin-bottom: 40px;
+
     color: #64748b;
 
     font-size: 16px;
-
-    margin-bottom: 40px;
 }
 
 
-
+/* =====================================================
+   FEATURE GRID
+===================================================== */
 
 .feature-grid {
     width: 100%;
-
     max-width: 1100px;
 
     margin: 0 auto;
 
     display: grid;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 25px;
 }
 
 
-
+/* =====================================================
+   FEATURE CARD
+===================================================== */
 
 .feature-card {
-    background: #f8fafc;
-
     padding: 30px 20px;
 
-    border-radius: 12px;
+    background: #f8fafc;
 
     border: 1px solid #e2e8f0;
 
-    transition: all 0.3s ease;
+    border-radius: 12px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
 
-    box-shadow:
-        0 10px 25px
-        rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 
@@ -349,12 +383,10 @@ body {
     margin: 0 auto 18px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     background: #dbeafe;
-
     color: #2563eb;
 
     border-radius: 10px;
@@ -363,37 +395,44 @@ body {
 }
 
 .feature-card h3 {
-    font-size: 20px;
-
     margin-bottom: 10px;
+
+    color: #1e293b;
+
+    font-size: 20px;
 }
 
 .feature-card p {
     color: #64748b;
 
-    line-height: 1.6;
-
     font-size: 14px;
+
+    line-height: 1.6;
 }
 
 
-
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer {
     width: 100%;
 
-    background: #1e293b;
+    padding: 22px 15px;
 
+    background: #1e293b;
     color: #cbd5e1;
 
     text-align: center;
-
-    padding: 22px 15px;
 
     font-size: 14px;
 }
 
 
+/* =====================================================
+   TABLET
+   900px
+===================================================== */
 
 @media (max-width: 900px) {
 
@@ -420,41 +459,40 @@ footer {
     }
 
     .feature-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 
+/* =====================================================
+   MOBILE
+   768px
+===================================================== */
 
 @media (max-width: 768px) {
 
+    /* -------------------------
+       NAVBAR
+    ------------------------- */
 
     .home-nav {
         min-height: 65px;
 
-        padding: 12px 18px;
-
-        display: flex;
+        padding: 10px 18px;
 
         flex-wrap: wrap;
-
-        align-items: center;
     }
 
     .logo {
         font-size: 25px;
     }
 
-
-    /* Show hamburger */
-
     .menu-toggle {
-        display: block;
+        display: flex;
     }
 
 
-    /* Hide menu */
+    /* Mobile menu */
 
     .nav-links {
         width: 100%;
@@ -462,55 +500,43 @@ footer {
         display: none;
 
         flex-direction: column;
-
         align-items: stretch;
 
-        gap: 5px;
+        gap: 6px;
 
         padding: 10px 0 5px;
     }
-
-
-    /* Show menu */
 
     .nav-links.active {
         display: flex;
     }
 
-
-    /* Mobile links */
-
     .nav-links a {
         width: 100%;
 
-        text-align: center;
-
-        background: #334155;
-
-        color: white;
-
         padding: 11px;
 
+        background: #334155;
+        color: #ffffff;
+
         border-radius: 6px;
+
+        text-align: center;
 
         font-size: 14px;
     }
 
     .nav-links a:hover {
         background: #475569;
-
-        color: white;
+        color: #ffffff;
     }
-
-
-    /* Login */
 
     .nav-links a:last-child {
         width: 100%;
 
-        background: #2563eb;
-
         padding: 11px;
+
+        background: #2563eb;
     }
 
     .nav-links a:last-child:hover {
@@ -518,10 +544,12 @@ footer {
     }
 
 
+    /* -------------------------
+       HERO
+    ------------------------- */
 
     .hero {
-        min-height: auto;
-
+       
         padding: 45px 20px;
 
         flex-direction: column;
@@ -532,8 +560,6 @@ footer {
     }
 
     .hero-content {
-        width: 100%;
-
         max-width: 600px;
     }
 
@@ -558,15 +584,21 @@ footer {
     }
 
 
+    /* -------------------------
+       HERO CARD
+    ------------------------- */
+
     .hero-card {
         width: 100%;
-
         max-width: 380px;
 
         padding: 30px 20px;
     }
 
 
+    /* -------------------------
+       FEATURES
+    ------------------------- */
 
     .features {
         padding: 50px 20px;
@@ -577,9 +609,9 @@ footer {
     }
 
     .features-subtitle {
-        font-size: 14px;
-
         margin-bottom: 30px;
+
+        font-size: 14px;
     }
 
     .feature-grid {
@@ -593,18 +625,20 @@ footer {
     }
 
 
-    footer {
-        font-size: 13px;
+    /* -------------------------
+       FOOTER
+    ------------------------- */
 
+    footer {
         padding: 20px 15px;
+
+        font-size: 13px;
     }
 }
 
 
 
 @media (max-width: 480px) {
-
-    /* Navbar */
 
     .home-nav {
         padding: 10px 15px;
@@ -615,13 +649,19 @@ footer {
     }
 
     .menu-toggle {
-        font-size: 25px;
+        width: 38px;
+        height: 38px;
+
+        font-size: 24px;
     }
 
-    .nav-links a {
-        font-size: 13px;
 
+    /* Mobile links */
+
+    .nav-links a {
         padding: 10px;
+
+        font-size: 13px;
     }
 
 
@@ -640,9 +680,9 @@ footer {
     }
 
     .hero-button {
-        font-size: 14px;
-
         padding: 10px 18px;
+
+        font-size: 14px;
     }
 
 
@@ -670,11 +710,11 @@ footer {
     }
 
 
-    /* Footer */
+   
 
     footer {
-        font-size: 12px;
-
         padding: 18px 10px;
+
+        font-size: 12px;
     }
 }
