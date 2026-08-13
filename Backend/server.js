@@ -33,7 +33,9 @@ app.use("/api/task", taskRouter);
 
 
 app.get("/",(req, res)=>{
-    res.render("Signup")
+    res.render("Signup").json({
+        message: "server is start"
+    })
 })
 
 
