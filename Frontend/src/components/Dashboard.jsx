@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 
 const API = "https://full-stack-kappa-lime.vercel.app/api";
@@ -252,11 +253,12 @@ const Dashboard = () => {
   };
 
 
-  const logout = () => {
-    localStorage.removeItem("token");
-    window.location.href = "/login";
-  };
+  const navigate = useNavigate();
 
+const logout = () => {
+    localStorage.removeItem("token");
+    navigate("/", { replace: true });
+};
 
   const pending = tasks.filter(
     (item) => item.status === "Pending"

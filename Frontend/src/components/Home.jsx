@@ -37,21 +37,22 @@ const Home = () => {
                 >
 
                     <Link
-                        to="/dashboard"
+                       
                         onClick={closeMenu}
+                        aria-disabled
                     >
                         Dashboard
                     </Link>
 
                     <Link
-                        to="/dashboard#tasks"
+                        
                         onClick={closeMenu}
                     >
                         Tasks
                     </Link>
 
                     <Link
-                        to="/dashboard#users"
+                        
                         onClick={closeMenu}
                     >
                         Users
@@ -88,7 +89,7 @@ const Home = () => {
                     </p>
 
                     <Link
-                        to="/dashboard"
+                        
                         className="hero-button"
                     >
                         Go to Dashboard

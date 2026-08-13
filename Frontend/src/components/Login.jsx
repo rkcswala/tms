@@ -32,9 +32,17 @@ function Login() {
       const data = await response.json();
 
       alert(data.message);
-      if (response.ok) {
-      navigate("/Dashboard")
-    }
+      localStorage.setItem("token", data.token);
+
+        console.log(
+            "TOKEN SAVED:",
+            localStorage.getItem("token")
+        );
+
+        
+        navigate("/dashboard", {
+            replace: true
+        });
     } catch (error) {
       console.log("Login Error:", error);
       alert("Cannot connect to server");
