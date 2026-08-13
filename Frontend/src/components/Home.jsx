@@ -1,27 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 
 const Home = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const closeMenu = () => {
+        setMenuOpen(false);
+    };
 
     return (
         <div className="home">
 
+
             <nav className="home-nav">
 
+                {/* Logo */}
                 <div className="logo">
                     Task<span>Flow</span>
                 </div>
 
-                <div className="nav-links">
-                    <Link to="/dashboard#">Dashboard</Link>
-                    <Link to="/dashboard#tasks">Tasks</Link>
-                    <Link to="/dashboard#users">Users</Link>
-                    <Link to="/login">Login</Link>
+                {/* Mobile Toggle Button */}
+                <button
+                    className="menu-toggle"
+                    onClick={() => setMenuOpen(!menuOpen)}
+                    aria-label="Toggle navigation"
+                >
+                    {menuOpen ? "✕" : "☰"}
+                </button>
+
+                {/* Navigation Links */}
+                <div
+                    className={`nav-links ${
+                        menuOpen ? "active" : ""
+                    }`}
+                >
+
+                    <Link
+                        to="/dashboard"
+                        onClick={closeMenu}
+                    >
+                        Dashboard
+                    </Link>
+
+                    <Link
+                        to="/dashboard#tasks"
+                        onClick={closeMenu}
+                    >
+                        Tasks
+                    </Link>
+
+                    <Link
+                        to="/dashboard#users"
+                        onClick={closeMenu}
+                    >
+                        Users
+                    </Link>
+
+                    <Link
+                        to="/login"
+                        onClick={closeMenu}
+                    >
+                        Login
+                    </Link>
+
                 </div>
 
             </nav>
-
 
 
 
@@ -42,9 +87,17 @@ const Home = () => {
                         and stay productive with TaskFlow.
                     </p>
 
+                    <Link
+                        to="/dashboard"
+                        className="hero-button"
+                    >
+                        Go to Dashboard
+                    </Link>
 
                 </div>
 
+
+                {/* Hero Card */}
 
                 <div className="hero-card">
 
@@ -66,6 +119,7 @@ const Home = () => {
             </section>
 
 
+          
             <section className="features">
 
                 <h2>
@@ -78,6 +132,8 @@ const Home = () => {
 
 
                 <div className="feature-grid">
+
+                    {/* Feature 1 */}
 
                     <div className="feature-card">
 
@@ -97,6 +153,8 @@ const Home = () => {
                     </div>
 
 
+                    {/* Feature 2 */}
+
                     <div className="feature-card">
 
                         <div className="feature-icon">
@@ -114,6 +172,8 @@ const Home = () => {
 
                     </div>
 
+
+                    {/* Feature 3 */}
 
                     <div className="feature-card">
 
@@ -137,12 +197,13 @@ const Home = () => {
             </section>
 
 
-            {/* Footer */}
 
             <footer>
+
                 <p>
                     © 2026 TaskFlow. All rights reserved.
                 </p>
+
             </footer>
 
         </div>
