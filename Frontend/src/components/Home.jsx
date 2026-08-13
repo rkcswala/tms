@@ -14,11 +14,10 @@ const Home = () => {
                 </div>
 
                 <div className="nav-links">
-                    <Link to="">Dashboard</Link>
-                    <Link to="/#">Tasks</Link>
-                    <Link to="/#">Users</Link>
+                    <Link to="/dashboard#">Dashboard</Link>
+                    <Link to="/dashboard#tasks">Tasks</Link>
+                    <Link to="/dashboard#users">Users</Link>
                     <Link to="/login">Login</Link>
-
                 </div>
 
             </nav>
@@ -43,7 +42,7 @@ const Home = () => {
                         and stay productive with TaskFlow.
                     </p>
 
-                
+
                 </div>
 
 
