@@ -408,7 +408,7 @@ td b {
     position: relative;
 
     width: 100%;
-    min-height: auto;
+   
 
     padding: 15px;
 
@@ -558,9 +558,11 @@ td b {
     font-size: 13px;
   }
 
-  
+  .feature-grid {
+    display: grid;
     grid-template-columns: 1fr;
-  }
+    gap: 20px;
+}
 
   .stat-card {
     padding: 15px;
